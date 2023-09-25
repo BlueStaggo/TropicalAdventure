@@ -421,7 +421,7 @@
  	}
  
 +	protected void mouseClicked(int var1, int var2, int var3) {
-+		if (var3 == 0 && var1 < this.fontRenderer.getStringWidth("Tropical Adventure 1.0") + 4 && var2 >= this.height - 12) {
++		if (var3 == 0 && var1 < this.fontRenderer.getStringWidth("Tropical Adventure 1.0.1") + 4 && var2 >= this.height - 12) {
 +				this.mc.sndManager.playSoundFX("random.wood click", 1.0F, 1.0F);
 +			this.creditsMode = !this.creditsMode;
 +			this.controlList.clear();
@@ -568,7 +568,7 @@
 +			this.drawCenteredString(this.fontRenderer, this.splashText, 0, -8, 0x55FF00);
 +			GL11.glPopMatrix();
 +		}
-+		this.drawString(this.fontRenderer, "Tropical Adventure 1.0", 2, this.height - 10, 16777215);
++		this.drawString(this.fontRenderer, "Tropical Adventure 1.0.1", 2, this.height - 10, 16777215);
 +		String var9 = "Tropical Adventure is not affiliated with Mojang";
 +		this.drawString(this.fontRenderer, var9, this.width - this.fontRenderer.getStringWidth(var9) - 2, this.height - 26, 0xAAAAAA);
 +		var9 = "and is not an official Minecraft product.";
@@ -1492,15 +1492,6 @@
  		Object var6 = new GenLayerTemperature((GenLayer)var16);
  		Object var7 = new GenLayerDownfall((GenLayer)var16);
  
-@@ -51,7 +56,7 @@
- 		var19.func_35496_b(var0);
- 		var22.func_35496_b(var0);
- 		var23.func_35496_b(var0);
--		return new GenLayer[]{var20, var23, var19, var22};
-+		return new GenLayer[]{var20, var23, var19, var22, var20};
- 	}
- 
- 	public GenLayer(long var1) {
 --- net/minecraft/src/TextureWaterFX.java
 +++ net/minecraft/src/TextureWaterFX.java
 @@ -63,7 +63,7 @@
@@ -2703,7 +2694,7 @@
 +    public void drawDebugScreen(int width, int height) {
 +        FontRenderer fontRenderer = this.mc.fontRenderer;
 +
-+        this.renderStringWithBackground(fontRenderer, "Tropical Adventure 1.0 (" + this.mc.debug + ")", 2, 2, 0xFFFFFF, 0x77000000, false);
++        this.renderStringWithBackground(fontRenderer, "Tropical Adventure 1.0.1 (" + this.mc.debug + ")", 2, 2, 0xFFFFFF, 0x77000000, false);
 +        long maxRam = Runtime.getRuntime().maxMemory();
 +        long totalRam = Runtime.getRuntime().totalMemory();
 +        long freeRam = Runtime.getRuntime().freeMemory();
@@ -3383,9 +3374,9 @@
 +	public static final Block stairCompactCobblestone1 = (new BlockStairs(116, cobblestone, 1)).setBlockName("stairsLimestone").setRequiresSelfNotify().setEffectiveAgainst(EnumTool.PICKAXE);
 +	public static final Block stairCompactCobblestone2 = (new BlockStairs(117, cobblestone, 2)).setBlockName("stairsGranite").setRequiresSelfNotify().setEffectiveAgainst(EnumTool.PICKAXE);
 +	public static final Block stairCompactCobblestone3 = (new BlockStairs(118, cobblestone, 3)).setBlockName("stairsBasalt").setRequiresSelfNotify().setEffectiveAgainst(EnumTool.PICKAXE);
-+	public static final Block field_35279_by1 = (new BlockStairs(119, field_35285_bn, 1)).setBlockName("stairsLimestoneBrickSmooth").setRequiresSelfNotify().setEffectiveAgainst(EnumTool.PICKAXE);
-+	public static final Block field_35279_by2 = (new BlockStairs(120, field_35285_bn, 2)).setBlockName("stairsGraniteBrickSmooth").setRequiresSelfNotify().setEffectiveAgainst(EnumTool.PICKAXE);
-+	public static final Block field_35279_by3 = (new BlockStairs(121, field_35285_bn, 3)).setBlockName("stairsBasaltBrickSmooth").setRequiresSelfNotify().setEffectiveAgainst(EnumTool.PICKAXE);
++	public static final Block field_35279_by1 = (new BlockStairs(119, field_35285_bn, 4)).setBlockName("stairsLimestoneBrickSmooth").setRequiresSelfNotify().setEffectiveAgainst(EnumTool.PICKAXE);
++	public static final Block field_35279_by2 = (new BlockStairs(120, field_35285_bn, 8)).setBlockName("stairsGraniteBrickSmooth").setRequiresSelfNotify().setEffectiveAgainst(EnumTool.PICKAXE);
++	public static final Block field_35279_by3 = (new BlockStairs(121, field_35285_bn, 12)).setBlockName("stairsBasaltBrickSmooth").setRequiresSelfNotify().setEffectiveAgainst(EnumTool.PICKAXE);
 +	public static final Block coral = (new BlockHardenedClay(122, 224, Material.rock)).setHardness(1.25F).setResistance(4.2F).setStepSound(soundStoneFootstep).setBlockName("coral").setEffectiveAgainst(EnumTool.PICKAXE);
 +	public static final Block ash = (new BlockAsh(125, 227)).setHardness(0.5F).setStepSound(soundSandFootstep).setBlockName("ash").setEffectiveAgainst(EnumTool.SHOVEL);
 +	public static final Block palmFenceGate = (new BlockFenceGate(126, 260)).setHardness(2.0F).setResistance(5.0F).setStepSound(soundWoodFootstep).setBlockName("palmFenceGate").setRequiresSelfNotify().setEffectiveAgainst(EnumTool.AXE);
@@ -6718,7 +6709,7 @@
 +			this.debugMenu.drawDebugScreen(var6, var7);
  		} else {
 -			var8.drawStringWithShadow("Minecraft Beta 1.8.1", 2, 2, 16777215);
-+			var8.drawStringWithShadow("Tropical Adventure 1.0", 2, 2, 16777215);
++			var8.drawStringWithShadow("Tropical Adventure 1.0.1", 2, 2, 16777215);
  		}
  
  		if(this.recordPlayingUpFor > 0) {
@@ -7014,9 +7005,9 @@
  		this.addRecipe(new ItemStack(Block.field_35280_bx, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), Block.brick});
 -		this.addRecipe(new ItemStack(Block.field_35279_by, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), Block.field_35285_bn});
 +		this.addRecipe(new ItemStack(Block.field_35279_by, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.field_35285_bn, 1, 0)});
-+		this.addRecipe(new ItemStack(Block.field_35279_by1, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.field_35285_bn, 1, 1)});
-+		this.addRecipe(new ItemStack(Block.field_35279_by2, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.field_35285_bn, 1, 2)});
-+		this.addRecipe(new ItemStack(Block.field_35279_by3, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.field_35285_bn, 1, 3)});
++		this.addRecipe(new ItemStack(Block.field_35279_by1, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.field_35285_bn, 1, 4)});
++		this.addRecipe(new ItemStack(Block.field_35279_by2, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.field_35285_bn, 1, 8)});
++		this.addRecipe(new ItemStack(Block.field_35279_by3, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.field_35285_bn, 1, 12)});
  		this.addRecipe(new ItemStack(Item.painting, 1), new Object[]{"###", "#X#", "###", Character.valueOf('#'), Item.stick, Character.valueOf('X'), Block.cloth});
  		this.addRecipe(new ItemStack(Item.appleGold, 1), new Object[]{"###", "#X#", "###", Character.valueOf('#'), Block.blockGold, Character.valueOf('X'), Item.appleRed});
  		this.addRecipe(new ItemStack(Block.lever, 1), new Object[]{"X", "#", Character.valueOf('#'), Block.cobblestone, Character.valueOf('X'), Item.stick});
@@ -7219,7 +7210,7 @@
  			var5 = var5 + "Generated " + (new SimpleDateFormat()).format(new Date()) + "\n";
  			var5 = var5 + "\n";
 -			var5 = var5 + "Minecraft: Minecraft Beta 1.8.1\n";
-+			var5 = var5 + "Minecraft: Tropical Adventure 1.0\n";
++			var5 = var5 + "Minecraft: Tropical Adventure 1.0.1\n";
  			var5 = var5 + "OS: " + System.getProperty("os.name") + " (" + System.getProperty("os.arch") + ") version " + System.getProperty("os.version") + "\n";
  			var5 = var5 + "Java: " + System.getProperty("java.version") + ", " + System.getProperty("java.vendor") + "\n";
  			var5 = var5 + "VM: " + System.getProperty("java.vm.name") + " (" + System.getProperty("java.vm.info") + "), " + System.getProperty("java.vm.vendor") + "\n";
@@ -8292,7 +8283,7 @@
  		}
  
 -		Display.setTitle("Minecraft Minecraft Beta 1.8.1");
-+		Display.setTitle("Minecraft Tropical Adventure 1.0");
++		Display.setTitle("Minecraft Tropical Adventure 1.0.1");
  
  		try {
  			PixelFormat var7 = new PixelFormat();
@@ -9872,9 +9863,9 @@
 +		var1.addRecipe(new ItemStack(Block.sandStone, 1, 1), new Object[]{"##", "##", Character.valueOf('#'), new ItemStack(Block.sand, 1, 1)});
 +		var1.addRecipe(new ItemStack(Block.sandStone, 1, 2), new Object[]{"##", "##", Character.valueOf('#'), new ItemStack(Block.sand, 1, 2)});
 +		var1.addRecipe(new ItemStack(Block.field_35285_bn, 4, 0), new Object[]{"##", "##", Character.valueOf('#'), new ItemStack(Block.stone, 1, 0)});
-+		var1.addRecipe(new ItemStack(Block.field_35285_bn, 4, 1), new Object[]{"##", "##", Character.valueOf('#'), new ItemStack(Block.stone, 1, 1)});
-+		var1.addRecipe(new ItemStack(Block.field_35285_bn, 4, 2), new Object[]{"##", "##", Character.valueOf('#'), new ItemStack(Block.stone, 1, 2)});
-+		var1.addRecipe(new ItemStack(Block.field_35285_bn, 4, 3), new Object[]{"##", "##", Character.valueOf('#'), new ItemStack(Block.stone, 1, 3)});
++		var1.addRecipe(new ItemStack(Block.field_35285_bn, 4, 4), new Object[]{"##", "##", Character.valueOf('#'), new ItemStack(Block.stone, 1, 1)});
++		var1.addRecipe(new ItemStack(Block.field_35285_bn, 4, 8), new Object[]{"##", "##", Character.valueOf('#'), new ItemStack(Block.stone, 1, 2)});
++		var1.addRecipe(new ItemStack(Block.field_35285_bn, 4, 12), new Object[]{"##", "##", Character.valueOf('#'), new ItemStack(Block.stone, 1, 3)});
  		var1.addRecipe(new ItemStack(Block.field_35288_bq, 16), new Object[]{"###", "###", Character.valueOf('#'), Item.ingotIron});
  		var1.addRecipe(new ItemStack(Block.field_35282_br, 16), new Object[]{"###", "###", Character.valueOf('#'), Block.glass});
  	}
